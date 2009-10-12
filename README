@@ -1,1 +1,8 @@
-see http://www.ruby-doc.org/core/classes/Enumerable.html
+For original inspiration see http://www.ruby-doc.org/core/classes/Enumerable.html
+
+rough support for NSArray is present e.g.
+    NSArray* quadrupeds = [animals select:^(id obj) {
+        return (BOOL)([(Animal*)obj numberOfLegs] == 4);
+    }];
+
+Mac OS X 10.6 SnowLeopard or later required due to block use.
