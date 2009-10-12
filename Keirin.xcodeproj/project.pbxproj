@@ -13,6 +13,7 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		D8B043BC1082DD1100EB5355 /* NSArray-EnumerableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B043BB1082DD1100EB5355 /* NSArray-EnumerableAdditions.m */; };
+		D8B043DC1082F95400EB5355 /* NSDictionary-EnumerableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B043DB1082F95400EB5355 /* NSDictionary-EnumerableAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		D8B043011082AA0B00EB5355 /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
 		D8B043BA1082DD1100EB5355 /* NSArray-EnumerableAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray-EnumerableAdditions.h"; sourceTree = "<group>"; };
 		D8B043BB1082DD1100EB5355 /* NSArray-EnumerableAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray-EnumerableAdditions.m"; sourceTree = "<group>"; };
+		D8B043DA1082F95400EB5355 /* NSDictionary-EnumerableAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary-EnumerableAdditions.h"; sourceTree = "<group>"; };
+		D8B043DB1082F95400EB5355 /* NSDictionary-EnumerableAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary-EnumerableAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +55,8 @@
 				256AC3D90F4B6AC300CF3369 /* KeirinAppDelegate.m */,
 				D8B043BA1082DD1100EB5355 /* NSArray-EnumerableAdditions.h */,
 				D8B043BB1082DD1100EB5355 /* NSArray-EnumerableAdditions.m */,
+				D8B043DA1082F95400EB5355 /* NSDictionary-EnumerableAdditions.h */,
+				D8B043DB1082F95400EB5355 /* NSDictionary-EnumerableAdditions.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				256AC3DA0F4B6AC300CF3369 /* KeirinAppDelegate.m in Sources */,
 				D8B043BC1082DD1100EB5355 /* NSArray-EnumerableAdditions.m in Sources */,
+				D8B043DC1082F95400EB5355 /* NSDictionary-EnumerableAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
