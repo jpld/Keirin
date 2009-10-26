@@ -14,6 +14,9 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		D8B043BC1082DD1100EB5355 /* NSArray-EnumerableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B043BB1082DD1100EB5355 /* NSArray-EnumerableAdditions.m */; };
 		D8B043DC1082F95400EB5355 /* NSDictionary-EnumerableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B043DB1082F95400EB5355 /* NSDictionary-EnumerableAdditions.m */; };
+		D8D11BE41095856E00B91BE0 /* NSArray-EnumerableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B043BB1082DD1100EB5355 /* NSArray-EnumerableAdditions.m */; };
+		D8D11BE51095857100B91BE0 /* NSDictionary-EnumerableAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B043DB1082F95400EB5355 /* NSDictionary-EnumerableAdditions.m */; };
+		D8D11BFD1095862400B91BE0 /* NSArrayEnumerableTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D11BFC1095862400B91BE0 /* NSArrayEnumerableTestCase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,10 @@
 		D8B043BB1082DD1100EB5355 /* NSArray-EnumerableAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray-EnumerableAdditions.m"; sourceTree = "<group>"; };
 		D8B043DA1082F95400EB5355 /* NSDictionary-EnumerableAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary-EnumerableAdditions.h"; sourceTree = "<group>"; };
 		D8B043DB1082F95400EB5355 /* NSDictionary-EnumerableAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary-EnumerableAdditions.m"; sourceTree = "<group>"; };
+		D8D11BDE1095853600B91BE0 /* Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8D11BDF1095853600B91BE0 /* Unit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Unit Tests-Info.plist"; sourceTree = "<group>"; };
+		D8D11BFB1095862400B91BE0 /* NSArrayEnumerableTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArrayEnumerableTestCase.h; sourceTree = "<group>"; };
+		D8D11BFC1095862400B91BE0 /* NSArrayEnumerableTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayEnumerableTestCase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +49,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8D11BDB1095853600B91BE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				8D1107320486CEB800E47090 /* Keirin.app */,
+				D8D11BDE1095853600B91BE0 /* Unit Tests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
+				D8D11BE7109585B400B91BE0 /* Tests */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -115,6 +131,7 @@
 				8D1107310486CEB800E47090 /* Keirin-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+				D8D11BDF1095853600B91BE0 /* Unit Tests-Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -126,6 +143,15 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8D11BE7109585B400B91BE0 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D8D11BFB1095862400B91BE0 /* NSArrayEnumerableTestCase.h */,
+				D8D11BFC1095862400B91BE0 /* NSArrayEnumerableTestCase.m */,
+			);
+			name = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +175,24 @@
 			productReference = 8D1107320486CEB800E47090 /* Keirin.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D8D11BDD1095853600B91BE0 /* Unit Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8D11BE21095853C00B91BE0 /* Build configuration list for PBXNativeTarget "Unit Tests" */;
+			buildPhases = (
+				D8D11BD91095853600B91BE0 /* Resources */,
+				D8D11BDA1095853600B91BE0 /* Sources */,
+				D8D11BDB1095853600B91BE0 /* Frameworks */,
+				D8D11BDC1095853600B91BE0 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Unit Tests";
+			productName = "Unit Tests";
+			productReference = D8D11BDE1095853600B91BE0 /* Unit Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -162,6 +206,7 @@
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* Keirin */,
+				D8D11BDD1095853600B91BE0 /* Unit Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -176,7 +221,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D8D11BD91095853600B91BE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D8D11BDC1095853600B91BE0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D11072C0486CEB800E47090 /* Sources */ = {
@@ -187,6 +255,16 @@
 				256AC3DA0F4B6AC300CF3369 /* KeirinAppDelegate.m in Sources */,
 				D8B043BC1082DD1100EB5355 /* NSArray-EnumerableAdditions.m in Sources */,
 				D8B043DC1082F95400EB5355 /* NSDictionary-EnumerableAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8D11BDA1095853600B91BE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8D11BE41095856E00B91BE0 /* NSArray-EnumerableAdditions.m in Sources */,
+				D8D11BE51095857100B91BE0 /* NSDictionary-EnumerableAdditions.m in Sources */,
+				D8D11BFD1095862400B91BE0 /* NSArrayEnumerableTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +351,60 @@
 			};
 			name = Release;
 		};
+		D8D11BE01095853C00B91BE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "Unit Tests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Unit Tests";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D8D11BE11095853C00B91BE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "Unit Tests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Unit Tests";
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -290,6 +422,15 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8D11BE21095853C00B91BE0 /* Build configuration list for PBXNativeTarget "Unit Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8D11BE01095853C00B91BE0 /* Debug */,
+				D8D11BE11095853C00B91BE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
