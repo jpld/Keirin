@@ -28,7 +28,7 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Keirin-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Keirin-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Keirin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keirin.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8B043001082AA0B00EB5355 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		D8B043001082AA0B00EB5355 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		D8B043011082AA0B00EB5355 /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
 		D8B043BA1082DD1100EB5355 /* NSArray-EnumerableAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray-EnumerableAdditions.h"; sourceTree = "<group>"; };
 		D8B043BB1082DD1100EB5355 /* NSArray-EnumerableAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray-EnumerableAdditions.m"; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D8B043001082AA0B00EB5355 /* README */,
+				D8B043001082AA0B00EB5355 /* README.markdown */,
 				D8B043011082AA0B00EB5355 /* TODO */,
 				8D1107310486CEB800E47090 /* Keirin-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
