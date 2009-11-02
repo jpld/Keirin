@@ -78,13 +78,40 @@
 # pragma mark -
 # pragma mark DETECT
 
-- (void)testDetectKnownPresent {
+- (void)testDetectForKnownPresentAnimal {
     Animal* firstBiped = [_animals detect:^(id obj) {
         return (BOOL)([(Animal*)obj numberOfLegs] == 2);
     }];
 
     STAssertNotNil(firstBiped, @"should return non-nil result");
     STAssertEquals(firstBiped, _boy, @"first two legged animal should be boy");
+}
+
+- (void)testDetectForKnownMissingAnimal {
+    Animal* gorilla = [_animals detect:^(id obj) {
+        return (BOOL)([[(Animal*)obj name] isEqualToString:@"gorilla"]);
+    }];
+
+    STAssertNil(gorilla, @"should not detect result");
+}
+
+- (void)testDetectOnEmptyArray {
+    NSArray* list = [[NSArray alloc] init];
+    Animal* firstBiped = [list detect:^(id obj) {
+        return (BOOL)([(Animal*)obj numberOfLegs] == 2);
+    }];
+    [list release];
+
+    STAssertNil(firstBiped, @"empty array should not detect result");
+}
+
+- (void)testDetectOnNilArray {
+    NSArray* list = nil;
+    Animal* firstBiped = [list detect:^(id obj) {
+        return (BOOL)([(Animal*)obj numberOfLegs] == 2);
+    }];
+
+    STAssertNil(firstBiped, @"nil array should not detect result");
 }
 
 @end
