@@ -8,7 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-// see http://www.ruby-doc.org/core/classes/Enumerable.html
+// see http://github.com/jpld/Keirin
+//  http://www.ruby-doc.org/core/classes/Enumerable.html
 @interface NSArray(Enumerable)
 - (id)detect:(BOOL (^)(id obj))predicate; // find
 - (NSArray*)select:(BOOL (^)(id obj))predicate; // find_all
