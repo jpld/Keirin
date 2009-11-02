@@ -8,8 +8,13 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
+@class Animal;
+
 @interface NSArrayEnumerableTestCase : SenTestCase {
 @private
     NSArray* _animals;
+    Animal* _boy;
+    Animal* _cat;
+    Animal* _bird;
 }
 @end

@@ -34,6 +34,16 @@
     return [a autorelease];
 }
 
+- (id)initWithName:(NSString*)name numberOfLegs:(NSUInteger)legs canFly:(BOOL)flag {
+    self = [super init];
+    if (!self)
+        return nil;
+    self.name = name;
+    self.numberOfLegs = legs;
+    self.canFly = flag;
+    return self;
+}
+
 - (void)dealloc {
     [_name release];
 
@@ -46,18 +56,35 @@
 
 @end
 
+# pragma mark -
+
 @implementation NSArrayEnumerableTestCase
 
 - (void)setUp {
-    _animals = [[NSArray alloc] initWithObjects:
-                [Animal animalWithName:@"boy" numberOfLegs:2 canFly:NO],
-                [Animal animalWithName:@"cat" numberOfLegs:4 canFly:NO],
-                [Animal animalWithName:@"bird" numberOfLegs:2 canFly:YES],
-                nil];
+    _boy = [[Animal alloc] initWithName:@"boy" numberOfLegs:2 canFly:NO];
+    _cat = [[Animal alloc] initWithName:@"cat" numberOfLegs:4 canFly:NO];
+    _bird = [[Animal alloc] initWithName:@"bird" numberOfLegs:2 canFly:YES];
+    _animals = [[NSArray alloc] initWithObjects:_boy, _cat, _bird, nil];
 }
 
 - (void)tearDown {
     [_animals release];
+
+    [_boy release];
+    [_cat release];
+    [_bird release];
+}
+
+# pragma mark -
+# pragma mark DETECT
+
+- (void)testDetectKnownPresent {
+    Animal* firstBiped = [_animals detect:^(id obj) {
+        return (BOOL)([(Animal*)obj numberOfLegs] == 2);
+    }];
+
+    STAssertNotNil(firstBiped, @"should return non-nil result");
+    STAssertEquals(firstBiped, _boy, @"first two legged animal should be boy");
 }
 
 @end
