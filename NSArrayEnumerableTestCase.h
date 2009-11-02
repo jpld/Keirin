@@ -8,5 +8,8 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface NSArrayEnumerableTestCase : SenTestCase {}
+@interface NSArrayEnumerableTestCase : SenTestCase {
+@private
+    NSArray* _animals;
+}
 @end
