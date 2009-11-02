@@ -114,4 +114,47 @@
     STAssertNil(firstBiped, @"nil array should not detect result");
 }
 
+# pragma mark -
+# pragma mark SELECT
+
+- (void)testSelectForKnownPresentAnimals {
+    NSArray* bipeds = [_animals select:^(id obj) {
+        return (BOOL)([(Animal*)obj numberOfLegs] == 2);
+    }];
+
+    STAssertNotNil(bipeds, @"should return non-nil result");
+    STAssertTrue(bipeds.count == 2, @"should select 2 objects");
+    STAssertEquals([bipeds objectAtIndex:0], _boy, @"first selection should be boy");
+    STAssertEquals([bipeds objectAtIndex:1], _bird, @"second selection should be bird");
+}
+
+- (void)testSelectForKnownMissingAnimals {
+    NSArray* picks = [_animals select:^(id obj) {
+        return (BOOL)([(Animal*)obj numberOfLegs] == 0);
+    }];
+
+    STAssertNotNil(picks, @"should return non-nil result");
+    STAssertTrue(picks.count == 0, @"should select 0 objects");
+}
+
+- (void)testSelectOnEmptyArray {
+    NSArray* list = [[NSArray alloc] init];
+    NSArray* bipeds = [list select:^(id obj) {
+        return (BOOL)([(Animal*)obj numberOfLegs] == 2);
+    }];
+    [list release];
+
+    STAssertNotNil(bipeds, @"should return non-nil result");
+    STAssertTrue(bipeds.count == 0, @"should select 0 objects");
+}
+
+- (void)testSelectOnNilArray {
+    NSArray* list = nil;
+    NSArray* bipeds = [list select:^(id obj) {
+        return (BOOL)([(Animal*)obj numberOfLegs] == 2);
+    }];
+
+    STAssertNil(bipeds, @"should return nil result");
+}
+
 @end
