@@ -157,4 +157,47 @@
     STAssertNil(bipeds, @"should return nil result");
 }
 
+# pragma mark -
+# pragma mark REJECT
+
+- (void)testRejectForKnownPresentAnimals {
+    NSArray* animals = [_animals reject:^(id obj) {
+        return (BOOL)([(Animal*)obj numberOfLegs] == 2);
+    }];
+
+    STAssertNotNil(animals, @"should return non-nil result");
+    STAssertFalse([animals containsObject:_boy], @"should not contain boy with 2 legs");
+    STAssertFalse([animals containsObject:_bird], @"should not contain bird with 2 legs");
+    STAssertTrue([animals containsObject:_cat], @"should contain cat with 4 legs");
+}
+
+- (void)testRejectForKnownMissingAnimals {
+    NSArray* animals = [_animals reject:^(id obj) {
+        return (BOOL)([[(Animal*)obj name] isEqualToString:@"gorilla"]);
+    }];
+
+    STAssertNotNil(animals, @"should return non-nil result");
+    STAssertTrue(animals.count == _animals.count, @"should reject nothing, leaving original 3 objects");
+}
+
+- (void)testRejectOnEmptyArray {
+    NSArray* list = [[NSArray alloc] init];
+    NSArray* animals = [list reject:^(id obj) {
+        return (BOOL)([(Animal*)obj numberOfLegs] == 2);
+    }];
+    [list release];
+
+    STAssertNotNil(animals, @"should return non-nil result");
+    STAssertTrue(animals.count == 0, @"should reject nothing but leave 0 results");
+}
+
+- (void)testRejectOnNilArray {
+    NSArray* list = nil;
+    NSArray* animals = [list reject:^(id obj) {
+        return (BOOL)([(Animal*)obj numberOfLegs] >= 0);
+    }];
+
+    STAssertNil(animals, @"should not return result, nil");
+}
+
 @end
